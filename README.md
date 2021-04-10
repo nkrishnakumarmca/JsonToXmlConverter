@@ -2,12 +2,12 @@
 
 JSON TO XML converter
 
-##Pre requsitie
+## Pre requisite
  - Java should be installed
  - Git should be installed
  - Maven should be installed
 
-##Installation step
+## Installation step
 -  Navigate to your workspace in terminal
 - Type the command 
 ` git clone https://github.com/nkrishnakumarmca/JsonToXmlConverter.git `
