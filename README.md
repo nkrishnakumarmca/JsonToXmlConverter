@@ -18,4 +18,4 @@ JSON TO XML converter
     ` mvn clean compile assembly:single `
 - Navigate to target folder  using cd target command
 -Then run this command 
-` java -jar target/jsonToXmlConverter-jar-with-dependencies.jar <your input file path with file name> <your output file path> `
+` java -jar target/jsonToXmlConverter-jar-with-dependencies.jar <your input file path with file name> <your output file path with name> `
