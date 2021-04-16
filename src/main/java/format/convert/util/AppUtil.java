@@ -12,6 +12,7 @@ public class AppUtil {
      * @return
      */
     public static String validate(String s) {
+        //TODO: String with -
         Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
         if (String.valueOf(s).equalsIgnoreCase("null")) {
             return "null";

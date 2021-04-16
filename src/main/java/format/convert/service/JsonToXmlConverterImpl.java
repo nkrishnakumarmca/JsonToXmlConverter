@@ -132,6 +132,10 @@ public class JsonToXmlConverterImpl implements Converter {
             Map.Entry<String, JsonNode> field = currJsonNodefields.next();
             String fieldName = field.getKey();
             JsonNode jsonNode = field.getValue();
+            if(jsonNode.isArray()){
+                //String rootTagName, Document document, Element parentElement, JsonNode currJsonNode, boolean hasAttribute
+                buildArray(rootTagName,document,root,jsonNode,false);
+            }
             Element newElement = getElement(document, AppUtil.validate(jsonNode.asText()));
             setAttribute(fieldName, newElement);
             newElement.appendChild(document.createTextNode(jsonNode.asText()));
@@ -167,7 +171,7 @@ public class JsonToXmlConverterImpl implements Converter {
         while (subElements.hasNext()) {
             JsonNode jsonNode = subElements.next();
             if (jsonNode.isArray() || jsonNode.isObject()) {
-                buildXml(jsonNode.elements(), jsonNode.fieldNames(), document, parentElement, true);
+                buildXml(jsonNode.elements(), jsonNode.fieldNames(), document, element, true);
             } else {
                 String value = jsonNode.asText();
                 Element newElement = getElement(document, AppUtil.validate(value));
